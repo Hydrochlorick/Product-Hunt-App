@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="250" id="qBP-rg-0in">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="250" id="qBP-rg-0in" customClass="PostTableViewCell" customModule="ProductHuntPractice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBP-rg-0in" id="oab-3i-kH0">
@@ -90,6 +90,13 @@
                                                 <constraint firstItem="Oim-kE-XxK" firstAttribute="leading" secondItem="oab-3i-kH0" secondAttribute="leadingMargin" id="qoa-sg-P2O"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentsCountLabel" destination="pO2-iR-pho" id="tNO-2E-7Kz"/>
+                                            <outlet property="nameLabel" destination="T93-My-QBJ" id="fjX-Lg-6Hl"/>
+                                            <outlet property="previewImageView" destination="zOb-7F-MhM" id="yoD-PA-vSU"/>
+                                            <outlet property="taglineLabel" destination="dwA-LZ-PG7" id="wpU-Oo-88Q"/>
+                                            <outlet property="votesCountLabel" destination="WqE-6b-oKm" id="n69-f8-aHt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
