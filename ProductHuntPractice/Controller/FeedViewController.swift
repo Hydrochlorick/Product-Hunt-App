@@ -55,5 +55,14 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let post = posts[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let commentsView = storyboard.instantiateViewController(withIdentifier: "commentsView") as? CommentsViewController else {
+            return
+        }
+        
+        commentsView.comments = ["Blah blah blah", "Good stuff, son", "How're ya now?"]
+        navigationController?.pushViewController(commentsView, animated: true)
+    }
 }
