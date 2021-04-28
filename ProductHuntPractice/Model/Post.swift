@@ -52,3 +52,12 @@ extension Post: Decodable{
         previewImageURL = try URLNestedContainer.decode(URL.self, forKey: .imageURL)
     }
 }
+
+struct Comment: Decodable {
+    let id: Int
+    let body: String
+}
+
+struct CommentApiResponse: Decodable {
+    let comments: [Comment]
+}
