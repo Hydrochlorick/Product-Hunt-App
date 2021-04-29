@@ -30,7 +30,12 @@ class FeedViewController: UIViewController {
     func updateFeed() {
         networkManager.getPosts() { result in
             // This is what we give to completion handler, which was given a list of posts as its parameter
-            self.posts = result
+            switch result {
+            case let .success(posts):
+                self.posts = posts
+            case let .failure(error):
+                print(error)
+            }
         }
     }
 
@@ -56,13 +61,13 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let post = posts[indexPath.row]
+        let post = posts[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let commentsView = storyboard.instantiateViewController(withIdentifier: "commentsView") as? CommentsViewController else {
             return
         }
         
-        commentsView.comments = ["Blah blah blah", "Good stuff, son", "How're ya now?"]
+        commentsView.postID = post.id
         navigationController?.pushViewController(commentsView, animated: true)
     }
 }
